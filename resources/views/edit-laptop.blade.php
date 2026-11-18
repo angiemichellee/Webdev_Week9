@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    {{-- route('update-laptop', $laptop) -> /update-laptop/{id} --}}
+    {{-- route('update-laptop', $laptop) ntar jadinya /update-laptop/{id} --}}
     <form method="POST" action="{{ route('update-laptop', $laptop) }}">
         @csrf
         @method('PUT')

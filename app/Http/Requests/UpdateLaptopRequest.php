@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class UpdateLaptopRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * boleh ga nih user ngirim request ini (true = bebas aja)
      */
     public function authorize(): bool
     {
@@ -16,7 +16,7 @@ class UpdateLaptopRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * aturan validasi buat form edit, kalo ga sesuai ya ditolak
      *
      * @return array<string, ValidationRule|array<mixed>|string>
      */

@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class LaptopController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * nampilin semua laptop yg ada
      */
     public function index()
     {
@@ -20,7 +20,7 @@ class LaptopController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * buka form buat nambahin laptop baru
      */
     public function create()
     {
@@ -28,7 +28,7 @@ class LaptopController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * nyimpen laptop baru ke database
      */
     public function store(Request $request)
     {
@@ -43,7 +43,7 @@ class LaptopController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * nampilin 1 laptop aja (blm kepake sih)
      */
     public function show(Laptop $laptop)
     {
@@ -51,28 +51,28 @@ class LaptopController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * buka form edit laptop
      */
     public function edit(Laptop $laptop)
     {
-        // $laptop is already fetched from the database by Route Model Binding
-        // (same as Laptop::findOrFail($id)), so we pass it straight to the view.
+        // $laptop udh otomatis diambilin dr database sama Route Model Binding
+        // (sama aja kyk Laptop::findOrFail($id)), jd tinggal lempar aja ke view
         return view('edit-laptop', compact('laptop'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * nyimpen hasil editan laptop
      */
     public function update(UpdateLaptopRequest $request, Laptop $laptop)
     {
-        // Data is already validated by UpdateLaptopRequest before reaching here
+        // datanya udh dicek duluan sama UpdateLaptopRequest sblm nyampe sini, jd aman
         $laptop->update($request->validated());
 
         return redirect('/');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * ngapus laptop
      */
     public function destroy(Request $request)
     {
